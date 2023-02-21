@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"flag"
 	"fmt"
 	"log"
 	"os"
@@ -11,7 +12,17 @@ import (
 // Coments contain significant to me comments made by tutor dring the course video
 
 func main() {
-	f, err := os.Open("myapp.log") // it will always return an Error instead of throwing the Error
+	// here we use flag standard lib that allows us to declare what command params
+	//  we exepct to receive and also define helper text for them
+	// we also define types that we expect to recevie
+	path := flag.String("path", "myapp.log", "The path that should be analyzed")
+	level := flag.String("level", "ERROR", "Log level to search for. Options are DEBUG, INFO, ERROR and CRITICAL")
+
+	flag.Parse() // this with actually populate variables with CLI params. if they were not provided we will get default value
+
+	// it will always return an Error as 2nd param instead of throwing the Error
+	// we need to use * before path as the return type of flag.String is not an actual string but pointer to it
+	f, err := os.Open(*path)
 
 	if err != nil { // if we have a pointer empty value it will equal nil
 		log.Fatal(err)
@@ -29,7 +40,7 @@ func main() {
 			break
 		}
 
-		if strings.Contains(s, "ERROR") {
+		if strings.Contains(s, *level) {
 			fmt.Println((s))
 		}
 	}
@@ -38,3 +49,4 @@ func main() {
 
 // NEWBE problems
 // when running the script uing go run . it failed with expected 'package', found 'EOF
+// the issue was simple. I forgot to save. Using VSC very rearly. Have to setup auto-save as I have in Jetbrains IDEs.
