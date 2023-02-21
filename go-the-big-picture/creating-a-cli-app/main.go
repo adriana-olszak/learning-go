@@ -47,6 +47,15 @@ func main() {
 
 }
 
-// NEWBE problems
+// [EXAMPLE OF A RUN]
+// passing --help will print what we defined using flags
+// go run . --help
+// Usage of /var/folders/ks/cx852zy94_n63qzdxrc02k1m0000gn/T/go-build655536635/b001/exe/creating-a-cli-app:
+//   -level string
+//     	Log level to search for. Options are DEBUG, INFO, ERROR and CRITICAL (default "ERROR")
+//   -path string
+//     	The path that should be analyzed (default "myapp.log")
+
+// [PROBLEMS]
 // when running the script uing go run . it failed with expected 'package', found 'EOF
 // the issue was simple. I forgot to save. Using VSC very rearly. Have to setup auto-save as I have in Jetbrains IDEs.
