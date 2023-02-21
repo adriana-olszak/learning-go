@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"log"
 	"net/http"
 )
@@ -15,8 +16,15 @@ func main() {
 			name = names[0]
 		}
 
-		w.Write([]byte("Hello " + name)) // []byte is needed bc writies always work with slices of bytes. We convert String into Byte using []byte
+		m := map[string]string{"name": name} // simple map of string to string in TS Map<string, string>, with first value of {name:name}
+
+		// we need to encode this map into JSON, we need to specifiy some kind of writer to write JSON into
+		enc := json.NewEncoder(w)
+
+		// encoding and writng to the passed writer 
+		enc.Encode(m)
 	})
+
 	err := http.ListenAndServe(":3000", nil)
 
 	if err != nil {
