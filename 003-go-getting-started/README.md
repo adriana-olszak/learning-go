@@ -34,9 +34,10 @@ Running can be done using `go run .` it will pick the closes main.go that has `p
 ## Working with Primitive Data
 
 ### Declaring variables with Primitive Data types
-
+The lesson is fully done in code.
 
 ### Working with Pointers
+We have a Pointed Date type in go language. The variable keeps the pooiinter to the memory where the value is stored. 
 
 ### Creating Constraints 
 
