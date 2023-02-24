@@ -32,13 +32,10 @@ We need to initialize the go module
 Running can be done using `go run .` it will pick the closes main.go that has `package main` defined. Another option is to run it using the name of the module used during initializaztion (it can be found in go.mod `module` section) like so: `go run <name-of-the-module>`
 
 ## Working with Primitive Data
+Done via code & code comments, check out `01-working-with-primitives` directory
 
-### Declaring variables with Primitive Data types
-The lesson is fully done in code.
+## Creating Functions and methods
 
-### Working with Pointers
-We have a Pointed Date type in go language. The variable keeps the pooiinter to the memory where the value is stored. 
+### Creating Functions
 
-### Creating Constraints 
-
-### usint Iota and Constant Expression
+### Adding

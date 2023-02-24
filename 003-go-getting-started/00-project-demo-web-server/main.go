@@ -1,17 +1,12 @@
 package main
 
 import (
-	"fmt"
+	"net/http"
 
-	"go-getting-started/demo-web-server/models"
+	"go-getting-started/demo-web-server/controllers"
 )
 
 func main() {
-	user := models.User{
-		ID:        2,
-		FirstName: "Marc",
-		LastName:  "Loleluis",
-	}
-
-	fmt.Println(user)
+	controllers.RegisterControllers()
+	http.ListenAndServe(":3000", nil) // nill specifies that we will use the defult serve
 }
