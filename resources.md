@@ -9,3 +9,4 @@
 - [Gophercises](https://gophercises.com/) - A collection of coding exercises designed to help Go learners improve their skills.
 - [Go Time Podcast](https://changelog.com/gotime) - A weekly podcast about the Go language, featuring discussions, interviews, and news.
 - [Awesome Go](https://awesome-go.com/) - A curated list of awesome Go frameworks, libraries, and software.
+    
